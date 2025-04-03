@@ -19,18 +19,18 @@ function Projects() {
       tags: ['React', 'Node.js', 'MongoDB', 'Fullstack']
     },
     {
-      id: 3,
-      title: 'Weather Dashboard',
-      description: 'An interactive weather dashboard that provides real-time weather updates. Built with React and integrated with a weather API, it offers a clean interface for users to check current conditions and forecasts.',
-      link: '#',
-      tags: ['React', 'API Integration', 'Frontend']
+      id: 5,
+      title: 'Hospital Appointment Booking App',
+      description: 'A comprehensive hospital appointment booking application that allows patients to schedule appointments with healthcare providers. Features a user-friendly interface for booking, rescheduling, and canceling appointments.',
+      link: 'https://hospital-frontend-59tx.onrender.com/',
+      tags: ['React', 'Node.js', 'MongoDB', 'Fullstack']
     },
     {
-      id: 4,
-      title: 'Task Management API',
-      description: 'A RESTful API for task management built with Node.js and Express. Features include user authentication, task CRUD operations, and data validation. Designed with scalability and performance in mind.',
-      link: '#',
-      tags: ['Node.js', 'Express', 'MongoDB', 'Backend']
+      id: 6,
+      title: 'Gift Galore',
+      description: 'An online gift shopping platform that helps users find and purchase the perfect gifts for various occasions. Includes features like gift recommendations, wishlists, and a seamless checkout experience.',
+      link: 'https://gift-galore-frontend.vercel.app/',
+      tags: ['React', 'Node.js', 'MongoDB', 'Fullstack']
     }
   ];
 

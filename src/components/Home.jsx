@@ -36,7 +36,7 @@ function Home() {
           <div className="rounded-full h-64 w-64 mx-auto overflow-hidden border-4 border-indigo-600 shadow-lg">
             {/* Replace with your actual profile picture */}
             <img 
-              src="/api/placeholder/400/400" 
+              src="/profile.jpeg" 
               alt="Joy Chelangat" 
               className="w-full h-full object-cover"
             />
