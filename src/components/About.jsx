@@ -17,7 +17,7 @@ function About() {
       id: 1,
       position: 'Web Developer Intern',
       company: 'Digital Innovations',
-      period: 'Aug 2024 - Oct 2024',
+      period: 'June 2024 - Oct 2024',
       description: 'Assisted in the development of client websites, gained experience with various frontend technologies and collaborative workflows.',
     },
   ];
