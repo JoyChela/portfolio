@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import emailjs from '@emailjs/browser';
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -10,32 +11,58 @@ function Contact() {
   
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
+
+  // Initialize EmailJS once component mounts
+  useEffect(() => {
+    // Replace with your EmailJS public key
+    emailjs.init("_sVQ5T_K-QsfefyO_");
+  }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
+    setError(null);
     
-    // Simulate form submission
-    setTimeout(() => {
-      setIsLoading(false);
-      setIsSubmitted(true);
-      setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: ''
-      });
+    try {
+      // Replace with your EmailJS service ID and template ID
+      const result = await emailjs.send(
+        "service_t52lrhm", 
+        "template_k8f2v8b",
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          reply_to: formData.email
+        }
+      );
       
-      // Reset success message after 5 seconds
-      setTimeout(() => {
-        setIsSubmitted(false);
-      }, 5000);
-    }, 1500);
+      if (result.text === 'OK') {
+        setIsSubmitted(true);
+        setFormData({
+          name: '',
+          email: '',
+          subject: '',
+          message: ''
+        });
+        
+        // Reset success message after 5 seconds
+        setTimeout(() => {
+          setIsSubmitted(false);
+        }, 5000);
+      }
+    } catch (error) {
+      console.error('Failed to send email:', error);
+      setError('Failed to send your message. Please try again later.');
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -86,6 +113,12 @@ function Contact() {
         {isSubmitted && (
           <div className="mb-6 p-4 bg-green-100 text-green-700 rounded-md">
             Thank you for your message! I'll get back to you as soon as possible.
+          </div>
+        )}
+        
+        {error && (
+          <div className="mb-6 p-4 bg-red-100 text-red-700 rounded-md">
+            {error}
           </div>
         )}
         
