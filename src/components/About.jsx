@@ -15,16 +15,9 @@ function About() {
   const experience = [
     {
       id: 1,
-      position: 'Frontend Developer',
-      company: 'Tech Solutions Inc.',
-      period: 'Jan 2023 - Present',
-      description: 'Developing responsive web applications using React.js, working in an agile team to deliver high-quality code on tight deadlines.',
-    },
-    {
-      id: 2,
       position: 'Web Developer Intern',
       company: 'Digital Innovations',
-      period: 'Aug 2022 - Dec 2022',
+      period: 'Aug 2024 - Oct 2024',
       description: 'Assisted in the development of client websites, gained experience with various frontend technologies and collaborative workflows.',
     },
   ];
@@ -33,7 +26,7 @@ function About() {
     {
       id: 1,
       degree: 'BSc in Computer Science',
-      institution: 'University of Technology',
+      institution: 'Laikipia University',
       period: '2019 - 2023',
       description: 'Focused on web development, software engineering principles, and database management.',
     }
